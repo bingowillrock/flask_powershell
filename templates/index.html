@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSH Button</title>
+    <script>
+        function initiateSSH() {
+            var username = "your_username";
+            var ipAddress = "192.168.1.1";
+            var port = "22";
+            var command = `ssh ${username}@${ipAddress} -p ${port}`;
+            var powershellUrl = "data:text/plain;base64," + btoa(command);
+            window.open("powershell:"+powershellUrl);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="initiateSSH()">Initiate SSH</button>
+</body>
+</html>
